@@ -17,11 +17,10 @@ fi
 case "$1" in
   create) mkdir -p ~/Dropbox/git/
           mkdir ~/Dropbox/git/$2.git
-          (cd ~/Dropbox/git/$2.git && git init --bare)
-          exit ;;
+          (cd ~/Dropbox/git/$2.git && git init --bare) ;;
   clone) git clone ~/Dropbox/git/$2.git ./$2 ;;
   destroy) rm -fr ~/Dropbox/git/$2.git ;;
-  *) echo I don\'t know how to $1. Commands available: create, clone, destroy && exit ;;
+  *) echo I don\'t know how to $1. Commands available: create, clone, destroy ;;
 esac
 
 # vim:set ft=sh:
