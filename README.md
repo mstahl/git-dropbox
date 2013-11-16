@@ -11,6 +11,10 @@ the script to the right location in `~/bin` if it exists, `/usr/local/bin`
 otherwise. If this is not where you want to install the script, simply copy
 the contents of `bin` to any directory in your path.
 
+To update git-dropbox, just type `git dropbox self update` and it'll grab the
+latest version from Github and put it in your `~/bin` directory for you, or
+wherever you installed it.
+
 ## Usage
 
 To create a new Dropbox-hosted repo in `~/Dropbox/git/your_repo_name.git`, do
