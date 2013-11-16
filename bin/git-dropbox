@@ -24,18 +24,8 @@ case "$1" in
           (cd ~/Dropbox/git/$2.git && git init --bare) ;;
   clone) git clone ~/Dropbox/git/$2.git ./$2 ;;
   destroy) rm -fr ~/Dropbox/git/$2.git ;;
-  self) if [ $2 -eq "update" ]; then
+  self) if [ $2="update" ]; then
           curl -o $DIR/git-dropbox https://raw.github.com/mstahl/git-dropbox/master/bin/git-dropbox
-        elif [ $2 -eq "destruct" ]; then
-          echo "This will uninstall git-dropbox and cannot be undone! Your repos will still be there though."
-          print "Are you sure? (yes/no) "
-          read response
-          if [ response -eq "yes" ]; then
-            rm -f $DIR/git-dropbox && echo "git-dropbox successfully uninstalled. Bye now!"
-            exit
-          else
-            echo "Ok I didn't delete anything."
-          fi
         fi
         ;;
   *) echo I don\'t know how to $1. Commands available: create, clone, destroy ;;
